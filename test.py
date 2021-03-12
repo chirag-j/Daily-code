@@ -7,3 +7,4 @@ b = 6
 c = 7
 
 d = jadoo(a,b,c)
+print(a,b)
