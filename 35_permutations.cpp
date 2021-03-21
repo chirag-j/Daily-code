@@ -1,29 +1,28 @@
 #include<iostream>
 #include <cmath>
-#include<iomanip>
+#include<vector>
 
 using namespace std;
 
-int a[] = {2,3,4,5};
 
-void display(int arr[], int size){
-	for (int i = 0; i<size; i++){
-		cout<<a[i]<<setw(2);
+void display(vector<int> &a){
+	for (int i = 0; i<a.size(); i++){
+		cout<<a[i]<<" ";
 	}
-	cout<<endl<<setw(1);
+	cout<<endl;
 }
 
-void permutations(int* a, int size, int x){
-	if (size == 0){
+void permutations(int &a, int x){
+	if (a.size() == 0){
 		// cout<<*a;
-		display(a, 4);
+		display(a);
 	}
 	else{
 		for (int i = x; i<size; i++){
 			// int* nxt = a+i;
-			swap(*a, *(a+i));
-			display(a, size);
-			permutations(a, size-i, i);
+			// swap(*a, *(a+i));
+			display(a);
+			// permutations(a, size-i, i);
 		}
 	}
 
@@ -32,25 +31,25 @@ void permutations(int* a, int size, int x){
 	// cout<<a;
 }
 
-void swap(int *x, int *y){
-	int temp = *x;
-	*x = *y;
-	*y = temp;
+void swap(int &x, int &y){
+	int temp = x;
+	x = y;
+	y = temp;
 }
 
 
 int main(){	
 
 	int length;
-	length = sizeof(a)/sizeof(a[0]);
+	std::vector<int> a = {2,3,4,5};
 
 	// for(int i = 0; i<length; i++)
-	permutations(a, 4, 1);
-	display(a, length);
+	// permutations(a, 1);
+	display(a);
 
-	swap(a, a+1);
 
-	display(a, length);
+
+	// display(a, length);
 
 	return 0;
 }
