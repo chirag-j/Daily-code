@@ -18,11 +18,10 @@ void permutations(int &a, int x){
 		display(a);
 	}
 	else{
-		for (int i = x; i<size; i++){
-			// int* nxt = a+i;
-			// swap(*a, *(a+i));
+		for (int i = x; i<a.size(); i++){
+			swap(a[0], a[i]);
 			display(a);
-			// permutations(a, size-i, i);
+			permutations(a, i);
 		}
 	}
 
