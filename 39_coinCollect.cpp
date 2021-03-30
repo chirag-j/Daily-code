@@ -36,14 +36,6 @@ int main(){
 	vector<vector<int>> arr = {{0,3,1,1},
 							   {2,0,0,4},
 							   {1,5,3,1}};
-
-	// vector<vector<int>> arr1 = {{12,12,7,6},
-	// 						    {12,9,5,5},
-	// 						    {10,9,4,1}};
-
-	// vector<vector<int>> arr = {{0,12,6,6},
-	// 						   {10,9,5,5},
-	// 						   {10,9,4,1}};
 	display(arr);
 	cout<<"Coins collected : "<<maxCoin(arr)<<endl;
 	return 0;
